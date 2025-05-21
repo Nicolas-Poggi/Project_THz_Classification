@@ -1,0 +1,70 @@
+We are performing 3D material identification using terahertz (THz) imaging.
+
+Experiment Setup:
+I will upload one frame at a time from the video 0_02625_backside_softmax_video.mp4.
+
+Each frame corresponds to one THz frequency (out of 1400 total).
+
+Each frame is a matplotlib plot showing the softmax-normalized reflection intensity spectra on the left.
+And on the right the phase of the current frame in radians.
+
+Early frames (0–50) and very late frames (1350–1399) might be less informative.
+
+Objective:
+For each frame:
+
+Analyze and store relevant observations (e.g., presence/absence of C4, approximate location if possible).
+
+Across frames:
+
+Accumulate knowledge as more frames are seen.
+
+Build a global understanding of where and when C4 is appearing.
+
+At the end:
+
+Identify the frame index where you are most confident C4 is visible.
+
+Provide the bounding box (or described region) for C4 detection.
+
+List all frames where C4 is suspected.
+
+Reasoning Guidelines:
+Do NOT reset memory after each frame.
+
+Treat each frame as part of a continuous sequence.
+
+C4 shows up as lower reflectivity than pure metal and very inconsistent change in frame from one frame to another..
+
+Prefer consistent detections across adjacent frames.
+
+Focus on regions and patterns rather than only single-point anomalies.
+
+Frame-by-Frame Processing Instructions:
+After each frame:
+
+Summarize what you observed from the current frame.
+
+Update a cumulative "memory" of detections.
+
+Only give a final report after the user indicates all frames have been uploaded (e.g., by sending a special message like "Finished" or "All frames uploaded").
+
+Deliverables (after all frames are seen):
+Frame index of most confident C4 detection.
+
+List of frequency/frame indices where C4 is visible.
+
+Important:
+Accumulate memory across frames.
+
+No extra image processing needed.
+
+Only logical reasoning based on the plots.
+
+If you detect C4 consistently across multiple adjacent frames, increase your confidence.
+
+VERY IMPORTANT:
+
+Focus on the middle 1000 frames (frames 250–1250) for practical analysis.
+
+There might be a lot of noise in the signals as well, learn to disregard the noise.
