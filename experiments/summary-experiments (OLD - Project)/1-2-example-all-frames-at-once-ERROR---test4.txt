@@ -1,0 +1,9 @@
+Input:
+- Five Input Images
+- test.txt with prompt (what can you see on the pictures?)
+
+ERROR:
+
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 14.28 GiB. GPU 0 has a total capacity of 93.10 GiB of which 11.11 GiB is free. Including non-PyTorch memory, this process has 81.95 GiB memory in use. Of the allocated memory 66.93 GiB is allocated by PyTorch, and 14.35 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+

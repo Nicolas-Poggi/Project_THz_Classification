@@ -1,0 +1,95 @@
+Input 
+- nico2_intro_prompt  - [in message as "role system"]
+
+- One Input Image       [in message as role user ](/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Thz_Data/Data/Processed_Image_Data/0_02625_Backside_Softmax/depth_image_layer_0001.png)
+- nico2_frame_prompt  - [in message as role user ] changed with image nr
+
+and after receiving the response adding the response to the Chat-history
+and adding next image and prompt
+
+- One Input Image       [in message as role user ](/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Thz_Data/Data/Processed_Image_Data/0_02625_Backside_Softmax/depth_image_layer_0002.png)
+- nico2_frame_prompt  - [in message as role user ] changed with imaeg nr
+
+and so on....
+
+
+------------------------
+Dialogue
+
+---input--- 1
+
+ /pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Thz_Data/Data/Processed_Image_Data/0_02625_Backside_Softmax/depth_image_layer_0001.png
+
+ Sending the next Image now. Analyse it and answer with reasoning. Here is the Image Nr. 1
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+
+
+---output--- 1
+
+ ### Frame Number 1
+### Observation: No C4
+The image shows a very uniform and low-intensity region in the intensity plot, with no significant features or variations. The phase plot also shows a relatively uniform distribution with no distinct patterns or discontinuities that would indicate the presence of C4. The lack of variation in both intensity and phase suggests that this frame does not provide evidence of C4.
+### Memory Update: No significant changes detected.
+
+
+---input--- 2
+
+ /pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Thz_Data/Data/Processed_Image_Data/0_02625_Backside_Softmax/depth_image_layer_0002.png
+
+ Sending the next Image now. Analyse it and answer with reasoning. Here is the Image Nr. 2
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+
+
+---output--- 2
+
+ ### Frame Number 2
+### Observation: No C4
+The intensity plot remains uniform and low, similar to the previous frame, with no significant features or variations. The phase plot shows some noise and slight variations, but there are no distinct patterns or discontinuities that would indicate the presence of C4. The overall uniformity in the intensity plot and the lack of clear phase changes suggest that this frame does not provide evidence of C4.
+### Memory Update: No significant changes detected.
+
+
+---input--- 3
+
+ /pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Thz_Data/Data/Processed_Image_Data/0_02625_Backside_Softmax/depth_image_layer_0003.png
+
+ Sending the next Image now. Analyse it and answer with reasoning. Here is the Image Nr. 3
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+
+
+---output--- 3
+
+ ### Frame Number 3
+### Observation: No C4
+The intensity plot continues to show a uniform and low-intensity region with no significant features or variations. The phase plot exhibits some noise and slight variations, but there are no distinct patterns or discontinuities that would suggest the presence of C4. The overall uniformity in the intensity plot and the lack of clear phase changes indicate that this frame does not provide evidence of C4.
+### Memory Update: No significant changes detected.
+
+
+---input--- 4
+
+ /pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Thz_Data/Data/Processed_Image_Data/0_02625_Backside_Softmax/depth_image_layer_0004.png
+
+ Sending the next Image now. Analyse it and answer with reasoning. Here is the Image Nr. 4
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+
+
+---output--- 4
+
+ ### Frame Number 4
+### Observation: No C4
+The intensity plot remains uniform and low, with no significant features or variations. The phase plot shows some noise and slight variations, but there are no distinct patterns or discontinuities that would indicate the presence of C4. The overall uniformity in the intensity plot and the lack of clear phase changes suggest that this frame does not provide evidence of C4.
+### Memory Update: No significant changes detected.
+
+
+---input--- 5
+
+ /pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Thz_Data/Data/Processed_Image_Data/0_02625_Backside_Softmax/depth_image_layer_0005.png
+
+ Sending the next Image now. Analyse it and answer with reasoning. Here is the Image Nr. 5
+
+
+ERROR
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 14.28 GiB. GPU 0 has a total capacity of 93.10 GiB of which 3.89 GiB is free. Including non-PyTorch memory, this process has 89.17 GiB memory in use. Of the allocated memory 66.98 GiB is allocated by PyTorch, and 21.52 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+
+
+--> Probably because to many images are in the "history"

@@ -1,0 +1,41 @@
+Input:
+- Four Input Images
+- test.txt with prompt (what can you see on the pictures?)
+
+
+Output:
+ The images you provided appear to be visualizations of intensity and phase data for different frequencies. Here is a detailed summary of each pair of images:
+
+1. **First Pair (Frequency 0001/1400):**
+   - **Intensity Plot:**
+     - The intensity plot shows a mostly uniform, dark purple color, indicating very low intensity values across the spatial units on both the X-axis and Y-axis.
+   - **Phase Plot:**
+     - The phase plot shows a mix of colors, predominantly red and blue, indicating varying phase values. There is a noticeable pattern or structure in the phase data, with some areas showing more concentrated phase changes.
+
+2. **Second Pair (Frequency 0002/1400):**
+   - **Intensity Plot:**
+     - Similar to the first pair, the intensity plot is mostly dark purple, indicating low intensity values.
+   - **Phase Plot:**
+     - The phase plot shows more distinct structures compared to the first pair. There are clear regions with different phase values, including a prominent rectangular area with a mix of red and blue phases.
+
+3. **Third Pair (Frequency 0003/1400):**
+   - **Intensity Plot:**
+     - The intensity plot remains mostly dark purple, indicating low intensity values.
+   - **Phase Plot:**
+     - The phase plot shows two distinct regions with different phase values. There is a central area with a mix of red and blue phases, surrounded by a more uniform background.
+
+4. **Fourth Pair (Frequency 0004/1400):**
+   - **Intensity Plot:**
+     - The intensity plot is again mostly dark purple, indicating low intensity values.
+   - **Phase Plot:**
+     - The phase plot shows a prominent rectangular area with a mix of red and blue phases, similar to the second pair but with more defined boundaries.
+
+### General Observations:
+- **Intensity:** Across all frequencies, the intensity plots are uniformly low, indicating that the primary focus of these visualizations is on the phase information rather than the intensity.
+- **Phase:** The phase plots show varying structures and patterns, with distinct regions of different phase values. These patterns become more pronounced and structured as the frequency increases from 0001 to 0004.
+
+### Possible Interpretations:
+- These visualizations could be related to wave propagation, interference patterns, or other phenomena where phase information is crucial.
+- The rectangular patterns in the phase plots might indicate regions of interest or specific structures within the data.
+
+If you have more context or specific questions about these visualizations, please provide additional details so I can offer more targeted information.
