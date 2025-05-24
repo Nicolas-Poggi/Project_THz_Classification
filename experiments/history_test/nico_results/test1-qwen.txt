@@ -4,7 +4,7 @@
 System Prompt Path:             /pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/prompts/1_nico_system_prompt.txt
 Frame Prompt Path:              /pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/prompts/31_nico_test_history_second.txt
 Image Folder Path:              /pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Thz_Data/Data/Processed_Image_Data/0_02625_Backside_Softmax/
-Model Path:                     mistralai/Mistral-Small-3.1-24B-Instruct-2503
+Model Path:                     Qwen/Qwen2.5-VL-7B-Instruct
 Max Tokens:                     200
 Max Storage:                    1
 Test Number:                    1
@@ -97,7 +97,7 @@ Tell me what you can see in the following image.
 
 --- 0001 ------ Output ---
 
-I see the Mona Lisa, a half-length portrait painting by Italian artist Leonardo da Vinci. It is considered an archetypal masterpiece of the Italian Renaissance, and has been described as "the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world." The painting is a portrait of a woman in a landscape, and is renowned for the subject's enigmatic smile. The painting is in the permanent collection of the Musée du Louvre in Paris.
+The image shows a framed painting of the Mona Lisa, a famous portrait painted by Leonardo da Vinci. The painting depicts a woman with a neutral expression, wearing a dark dress with a light-colored collar. The background features a landscape with hills and a body of water. The frame has an ornate design with a mix of gold and brown tones.
 
 
 --- 0002 ------ Input ---
@@ -108,9 +108,39 @@ What could you see in the previous Image? - Sending the next Image now. Analyse 
 
 --- 0002 ------ Output ---
 
-### Frame Number 2
-### Observation: No C4
-The image shows a very low-intensity signal across the entire region, with no significant features or variations in either the intensity or phase plots. The intensity plot is predominantly dark, indicating minimal reflection, and the phase plot shows a uniform distribution without any distinct patterns or discontinuities. This is consistent with the expected behavior of a metal plate, which would reflect strongly and uniformly at higher frequencies, but not at very low frequencies like this one. There are no indications of non-uniform reflections or phase changes that would suggest the presence of C4.
+### Frame Number 
+2
+
+### Observation: 
+The intensity image shows a very dark region with minimal variation, almost uniformly dark across the entire frame. The phase image also appears quite uniform with no significant phase changes, mostly showing a reddish hue.
+
+### Memory Update if significant changes detected: 
+No significant changes are observed compared to the previous frame.
+
+### Return Format Each Image:
+No C4
+
+### Warnings: 
+None
+
+---
+
+### Frame Number 
+2
+
+### Observation: 
+The intensity image continues to show a very dark region with minimal variation, almost uniformly dark across the entire frame. The phase image also appears quite uniform with no significant phase changes, mostly showing a reddish hue.
+
+### Memory Update if significant changes detected: 
+No significant changes are observed compared to the previous frame.
+
+### Return Format Each Image:
+No C4
+
+### Warnings: 
+None
+
+
 
 
 --- 0003 ------ Input ---
@@ -121,9 +151,16 @@ What could you see in the previous Image? - Sending the next Image now. Analyse 
 
 --- 0003 ------ Output ---
 
-### Frame Number 3
-### Observation: No C4
-The intensity image shows a uniform dark region, indicating low reflection and suggesting a consistent material surface, likely metal. The phase image shows some noise but no significant structural features or discontinuities that would indicate the presence of C4. The phase map does not exhibit the substantial changes or non-uniform reflections expected for C4.
+### Frame Number 
+3
+
+### Observation: 
+In the intensity image, there is a small, localized area with slightly higher intensity compared to the surrounding regions. This area is located near the center of the image. The phase image shows a corresponding region with a noticeable phase shift, suggesting a different material property.
+
+### Memory Update if significant changes detected: 
+The localized area in the intensity image and its corresponding phase shift in the phase image suggest the presence of a different material, potentially C4, at this location.
+
+<END Return Format Each Image>
 
 
 --- 0004 ------ Input ---
@@ -134,9 +171,25 @@ What could you see in the previous Image? - Sending the next Image now. Analyse 
 
 --- 0004 ------ Output ---
 
-### Frame Number 4
-### Observation: No C4
-The intensity image shows a uniform dark region, indicating low reflection and suggesting a consistent material surface, likely metal. The phase image shows two distinct regions with different phase shifts, but these are consistent with the expected behavior of a metal plate with possible surface variations or slight tilts. There are no substantial changes in intensity or phase that would suggest the presence of C4.
+### Frame Number 
+4
+
+### Observation: 
+The intensity image shows a very dark region with minimal variation, almost uniformly dark across the entire frame. The phase image displays a cluster of points around the center, with some scattered points towards the edges, indicating a localized area of interest.
+
+### Memory Update if significant changes detected: 
+The intensity image suggests a low-reflectivity region, while the phase image shows a localized area with a phase shift, which could be indicative of a different material or structure.
+
+### Warnings: 
+- Frames 0–50 and 1350–1399 should be avoided unless there are strong, obvious indicators.
+- Focus analysis on the central 1000 frames (250–1250).
+- Noise may be present.
+
+### Return Format Each Image:
+No C4
+
+### Warnings: 
+- Frames 0–50 and 1350–1399 should be avoided unless
 
 
 --- 0005 ------ Input ---
@@ -147,9 +200,16 @@ What could you see in the previous Image? - Sending the next Image now. Analyse 
 
 --- 0005 ------ Output ---
 
-### Frame Number 5
-### Observation: No C4
-The intensity image shows a uniform dark region, indicating low reflection and suggesting a consistent material surface, likely metal. The phase image shows a relatively uniform phase distribution with no significant discontinuities or variations that would indicate the presence of C4. The region appears to be consistent with the expected properties of a metal plate.
+### Frame Number 
+5
+
+### Observation: 
+The intensity image shows a uniform dark region, indicating low reflection intensity across the entire area. There are no significant changes in intensity observed. The phase image also shows a uniform pattern with minimal variation, suggesting a homogeneous material with little to no internal structure or boundary changes.
+
+### Memory Update if significant changes detected. 
+No significant changes detected in either the intensity or phase images.
+
+<END Return Format Each Image>
 
 
 --- 0006 ------ Input ---
@@ -160,9 +220,16 @@ What could you see in the previous Image? - Sending the next Image now. Analyse 
 
 --- 0006 ------ Output ---
 
-### Frame Number 6
-### Observation: No C4
-The intensity image shows a very uniform dark region, indicating low reflection and suggesting a consistent material surface, likely metal. The phase image shows a relatively uniform phase distribution with some noise, but no significant variations that would indicate the presence of C4. The lack of substantial changes in both intensity and phase suggests that this frame does not contain C4.
+### Frame Number 
+6
+
+### Observation: 
+In the intensity image, there is a region with slightly higher intensity compared to the surrounding area, located around the center-left part of the image. The phase image shows a localized area with a different phase pattern, suggesting a potential difference in material properties.
+
+### Memory Update if significant changes detected: 
+The intensity and phase images show localized changes that could indicate the presence of C4, but further analysis over multiple frames is necessary to confirm.
+
+<END Return Format Each Image>
 
 
 --- 0007 ------ Input ---
@@ -173,9 +240,39 @@ What could you see in the previous Image? - Sending the next Image now. Analyse 
 
 --- 0007 ------ Output ---
 
-### Frame Number 7
-### Observation: No C4
-The intensity image shows a uniform dark region, indicating low reflection and suggesting a consistent material surface, likely metal. The phase image shows some noise but no significant structural features or discontinuities that would indicate the presence of C4. The uniformity in both intensity and phase suggests that this frame does not provide evidence of C4.
+### Frame Number 
+7
+
+### Observation: 
+The intensity image shows a very dark region with minimal variation, almost uniformly low intensity across the entire frame. The phase image displays a mix of red and blue hues, indicating some phase variations but no sharp discontinuities.
+
+### Memory Update if significant changes detected: 
+No significant changes detected compared to previous frames.
+
+### Return Format Each Image:
+No C4
+
+### Warnings: 
+None
+
+---
+
+### Frame Number 
+7
+
+### Observation: 
+The intensity image shows a very dark region with minimal variation, almost uniformly low intensity across the entire frame. The phase image displays a mix of red and blue hues, indicating some phase variations but no sharp discontinuities.
+
+### Memory Update if significant changes detected: 
+No significant changes detected compared to previous frames.
+
+### Return Format Each Image:
+No C4
+
+### Warnings: 
+None
+
+
 
 
 --- 0008 ------ Input ---
@@ -186,9 +283,16 @@ What could you see in the previous Image? - Sending the next Image now. Analyse 
 
 --- 0008 ------ Output ---
 
-### Frame Number 8
-### Observation: No C4
-The intensity image shows a uniform dark region, indicating low reflection and suggesting that the signal is likely being absorbed or scattered by the material beneath. The phase image shows a relatively uniform distribution with some noise, but no distinct patterns or discontinuities that would indicate the presence of C4. The absence of significant features in both intensity and phase suggests that this frame does not provide evidence of C4.
+### Frame Number 
+8
+
+### Observation: 
+In the intensity image, the region appears uniformly dark, suggesting low reflection intensity. There are no significant changes in intensity across the frame. The phase image shows a mix of colors, but there are no sharp phase discontinuities or clear phase gradients that would indicate the presence of C4.
+
+### Memory Update if significant changes detected. 
+No significant changes detected.
+
+<END Return Format Each Image>
 
 
 --- 0009 ------ Input ---
@@ -199,9 +303,23 @@ What could you see in the previous Image? - Sending the next Image now. Analyse 
 
 --- 0009 ------ Output ---
 
-### Frame Number 9
-### Observation: No C4
-The intensity image shows a uniform dark region, indicating low reflection, which is typical for metal. The phase image shows a relatively uniform phase distribution with some noise, but no significant structural features that would indicate the presence of C4. The observations are consistent with the expected behavior of a metal plate.
+### Frame Number 
+9
+
+### Observation: 
+In the intensity image, there is a region with significantly higher intensity compared to the surrounding area, indicating a potential anomaly. The phase image shows a corresponding region with a distinct phase shift, suggesting a different material property.
+
+### Memory Update if significant changes detected: 
+The high-intensity region in the intensity image and the phase shift in the phase image are consistent with the expected behavior of C4 explosive material when compared to a metal-only region.
+
+### Return Format Each Image:
+#### Frame Number: 9
+#### Observation: 
+The intensity image shows a bright spot in the upper right quadrant, while the phase image displays a phase shift in the same region.
+#### Warnings: 
+None detected.
+
+### END Return Format Each Image
 
 
 --- 0010 ------ Input ---
@@ -212,9 +330,16 @@ What could you see in the previous Image? - Sending the next Image now. Analyse 
 
 --- 0010 ------ Output ---
 
-### Frame Number 10
-### Observation: No C4
-The intensity image shows a uniform dark region, indicating low reflection and suggesting that the signal is likely being absorbed or scattered by the material beneath. The phase image shows some variation, but it is not substantial enough to indicate the presence of C4. The patterns observed are consistent with the metal plate's expected behavior across different frequencies.
+### Frame Number 
+10
+
+### Observation: 
+In the intensity plot, the region appears uniformly dark, suggesting minimal reflection of THz radiation. There are no significant changes in intensity across the frame. The phase plot shows a mix of red and blue hues, indicating some variation in the wave propagation delay, but nothing particularly striking.
+
+### Memory Update if significant changes detected: 
+No significant changes detected in either the intensity or phase plots compared to previous frames.
+
+<END Return Format Each Image>
 
 
 
@@ -222,4 +347,4 @@ The intensity image shows a uniform dark region, indicating low reflection and s
 --End of Test--
 
 
-Elapsed Time: 54.62 seconds
+Elapsed Time: 34.18 seconds

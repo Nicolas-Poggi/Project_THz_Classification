@@ -1,11 +1,25 @@
-print("importing torch")
+print("importing libraries (torch, transformers, os, argparse, time)")
 import torch
-# from PIL import Image 
-print("importing pipeline")
 from transformers import pipeline
 import os 
 import argparse
 import time
+
+def get_model_path(model_name):
+    model_path = ""
+    if model_name.lower() == "mistral":
+        model_path = "mistralai/Mistral-Small-3.1-24B-Instruct-2503"
+
+    elif model_name.lower() == "qwen":
+        model_path = "Qwen/Qwen2.5-VL-7B-Instruct"
+    
+    elif model_name.lower() == "llama4":
+        model_path = "meta-llama/Llama-4-Scout-17B-16E-Instruct"
+    
+    elif model_name.lower() == "molmo":
+        model_path = "allenai/Molmo-7B-D-0924"
+
+    return model_path
 
 
 def get_promt(prompt_filepath):
@@ -57,7 +71,7 @@ def get_test_information_str(system_prompt_filepath, frame_prompt_filepath,image
         f"Test Description:                {test_description}",
         "--------------------"])
     return test_information_str
-    
+
 def get_message_history_as_string_in_json_format(message_history):
     counter = 1
     message_history_str = ""
@@ -213,11 +227,15 @@ def print_chat_element(chat_element_type, counter, text, image_filepath):
 def main():
 
     start_time = time.perf_counter()
+    
     #--------------------------------------------------------------------------------------------------
-    # Models 
+    # Models - When changing the modelpath also change test_addon in parameters for the output file
+    #
     # mistralai/Mistral-Small-3.1-24B-Instruct-2503
     # Qwen/Qwen2.5-VL-7B-Instruct
     # meta-llama/Llama-4-Scout-17B-16E-Instruct
+    #---------------------------------------------------------------------------------------------------
+
 
     #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     # -- SET GLOBAL PARAMETERS --
@@ -225,7 +243,7 @@ def main():
     # General parameters for the test
     frame_prompt_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/prompts/30_nico_test_history_first.txt"
     image_folder_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Thz_Data/Data/Processed_Image_Data/0_02625_Backside_Softmax/"
-    model_path = "mistralai/Mistral-Small-3.1-24B-Instruct-2503"
+    model_name = "qwen"
     max_tokens = 200
     max_storage = 1 # max number of prompts/images in memory [including the current prompt being used]
     
@@ -242,13 +260,13 @@ def main():
     testnumber = 1
     test_description = "Testing history capabilities with different models - If they can remember the first image (Mona Lisa) that was shown to them without being in chat_template --> AI remembers history"
     output_folder_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/history_test/nico_results"
-    test_addon = "mistral"
+    test_addon = "qwen"
     
     #Special Parameters for the test
     should_test_history = True
     test_frame_prompt_one_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/prompts/30_nico_test_history_first.txt"
     test_frame_prompt_two_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/prompts/31_nico_test_history_second.txt"
-    test_image_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/history_test/mona_lisa.jpg"
+    test_image_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/history_test/mona_lisa.png"
 
     #Parameters for the script
     counter = 0
@@ -262,17 +280,21 @@ def main():
     image_paths = get_image_paths(image_folder_filepath)
     system_prompt = get_promt(system_prompt_filepath)
     frame_prompt = get_promt(frame_prompt_filepath)
+    model_path = get_model_path(model_name)
     test_frame_prompt_one = ""
 
     if(should_test_history == True):
         test_frame_prompt_one = get_promt(test_frame_prompt_one_filepath)
-        frame_prompt = get_promt(test_frame_prompt_two_filepath)
+        frame_prompt_filepath = test_frame_prompt_two_filepath
+        frame_prompt = get_promt(frame_prompt_filepath)
 
+
+    print(frame_prompt)
     # Create the pipeline where the model is loaded 
     print("creating pipeline")
     pipe = pipeline("image-text-to-text", model=model_path, device="cuda", torch_dtype=torch.bfloat16)
     print("pipeline created")
-
+    
 
 
     #--------------------------------------------------------------------------------------------------
