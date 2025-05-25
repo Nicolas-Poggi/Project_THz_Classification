@@ -10,10 +10,11 @@ echo "Start of Bash Script"
 start=$(date +%s)
 
 for i in {0..3}; do
-    for j in {1..3}; do
-        echo "Running: python 1_single_image_creator_parallel.py $i $j"
-        python 1_single_image_creator_parallel.py $i $j
-    done
+    #for j in {1..3}; do
+    j=3
+    echo "Running: python 1_single_image_creator_parallel.py $i $j"
+    python 1_single_image_creator_parallel.py $i $j
+    #done
 done
 
 # End the timer

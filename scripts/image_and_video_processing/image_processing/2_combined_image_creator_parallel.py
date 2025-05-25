@@ -145,7 +145,7 @@ scaling_type = int(sys.argv[2])
 scaling_name = getScaleName(scaling_type)
 
 #---Create Output Folder---
-output_folder = f"{output_folder_pre}_{scaling_name}"
+output_folder = os.path.join(f"{output_folder_pre}_{scaling_name}", "combined_images")
 os.makedirs(output_folder, exist_ok=True)
 
 print("Mat File:                        ",filename_mat)

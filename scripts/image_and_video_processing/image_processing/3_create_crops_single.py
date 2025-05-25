@@ -34,7 +34,7 @@ def create_crops(filenumber):
 
     if(filenumber%2 == 0):
         filenumber = int(filenumber / 2)
-        print(f"Computing Crops Intensity Image: {(filenumber+1):04d} / 1400")
+        print(f"Computing Crops Intensity Image: {(filenumber):04d} / 1400")
         input_image_path = os.path.join(input_folder, f"depth_image_layer_intensity_{filenumber:04d}.png")
         output_folder_layer = os.path.join(output_folder, f"depth_image_layer_{filenumber:04d}")
         os.makedirs(output_folder_layer, exist_ok=True)
@@ -63,7 +63,18 @@ def create_crops(filenumber):
             left = col * crop_width
             top = row * crop_height
 
-            box = (left, top, left + crop_width, top + crop_height)
+            if( left + crop_width < width and top + crop_height < height):
+                box = (left, top, left + crop_width, top + crop_height)
+
+            elif(left + crop_width > width):
+                box = (left, top, width, top + crop_height)
+
+            elif(top + crop_height > height):
+                box = (left, top, left + crop_width, height)
+            
+            else:
+                box = (left, top, width, height)
+
             crop = img.crop(box)
 
             crop_filepath = f"{output_filename_pre}crop_{(counter+1):04d}_row_{(row):02d}_col_{(col):02d}.png"
@@ -133,13 +144,13 @@ def get_crop_size(filename_num):
         crop_size = (26,26)
     
     elif filename_num == 1:
-        crop_size = (16.7,20)
+        crop_size = (167,115)    
     
     elif filename_num == 2:
-        crop_size = (25,21)
+        crop_size = (67,77)     
     
     elif filename_num == 3:
-        crop_size = (45.7,43.8) 
+        crop_size = (73,73)     #some are 19 x 73
 
     else:
         print("Error: Unknown File Number")
@@ -169,14 +180,16 @@ crop_size = get_crop_size(filename_num)
 
 os.makedirs(output_folder, exist_ok=True)
     
-create_crops(0)
 
 
+#Range 0 to 2800 for 1400 images (2 crops per image - intensity and phase)
+# Implements parallel processing where even images are intensity images and odd images are phase images (input value of range is increased by 1)
+# Input Nr: 0, 2, 4, --> turn to --> Nr 1 , 3 , 5 --> intensity images
+# Input Nr: 1, 3, 5, --> turn to --> Nr 2 , 4 , 6 --> phase images
+#DONT WORRY --> Input numbers are handled to implement the correct numbering of the images
 
-
-
-# with ProcessPoolExecutor(max_workers=32) as executor:
-#     executor.map(create_crops, range(0,2800))
+with ProcessPoolExecutor(max_workers=32) as executor:
+    executor.map(create_crops, range(0,2800))
 
 #Get the size of the input image - With example image (ALL images have the same size)
 input_image_path = os.path.join(input_folder, f"depth_image_layer_intensity_0001.png")
