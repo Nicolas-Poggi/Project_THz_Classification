@@ -122,9 +122,9 @@ def get_list_of_phase_layers(processed_data):
 
 
 def process_and_save(depth_layer, intensity_layer, phase_layer, global_min, global_max, output_folder, crop_size, scaling_name):
-    depth_layer = int(depth_layer+1)
+    layer_number = int(depth_layer+1)
     
-    print(f"Computing Image: {(depth_layer):04d} / {processed_data.shape[0]}")
+    print(f"Computing Image: {(layer_number):04d} / {processed_data.shape[0]}")
     
     # # Get intensity image at a specific depth layer (without FFT)
     # image_intensity = torch.flipud(torch.pow(torch.abs(processed_data[depth_layer, ...]), 2)).transpose(0, 1).detach().cpu().numpy()
@@ -140,9 +140,9 @@ def process_and_save(depth_layer, intensity_layer, phase_layer, global_min, glob
 
 
     ##CROP DATA 
-    output_folder_layer = os.path.join(output_folder, f"depth_image_layer_{depth_layer:04d}")
+    output_folder_layer = os.path.join(output_folder, f"depth_image_layer_{layer_number:04d}")
     os.makedirs(output_folder_layer, exist_ok=True)
-    output_filename_pre = os.path.join(output_folder_layer, f"depth_image_layer_{depth_layer:04d}_")
+    output_filename_pre = os.path.join(output_folder_layer, f"depth_image_layer_{layer_number:04d}_")
     
     #Shape of the image in height x width format
     image_height, image_width = intensity_layer.shape
@@ -182,7 +182,7 @@ def process_and_save(depth_layer, intensity_layer, phase_layer, global_min, glob
             fig.colorbar(im1, ax=axs[1], fraction=0.046, pad=0.04, label="Phase (radians)")
         
 
-            plt.suptitle(f"Frequency {depth_layer:04d} / {processed_data.shape[0]} - Crop {counter:02d}")
+            plt.suptitle(f"Frequency {layer_number:04d} / {processed_data.shape[0]} - Crop {counter:02d}")
             plt.tight_layout(pad=0.5)
 
             crop_filepath = f"{output_filename_pre}crop_{(counter):04d}_row_{(row):02d}_col_{(col):02d}.png"
