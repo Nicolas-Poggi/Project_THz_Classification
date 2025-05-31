@@ -283,8 +283,9 @@ def main(args):
     if args.model != None: 
         model_name = args.model
     if args.should_add_context != None: 
-        should_add_context = should_add_context
-    
+        should_add_context = args.should_add_context
+    if args.test_description != None: 
+        test_description = args.test_description
     
     # Parse Paths & Prompts 
     output_filepath = get_output_filepath(testnumber, output_folder_filepath, output_addon)
@@ -483,6 +484,11 @@ if __name__ == "__main__":
     parser.add_argument("--should_add_context", type=bool, required=False, 
                         choices=[True,False], 
                         help="Add one Image Context")
+    
+    parser.add_argument("--test_description", type=str, required=False, 
+                        help="Add one Image Context")
+    
+    
 
 
     args = parser.parse_args()
