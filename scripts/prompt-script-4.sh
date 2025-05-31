@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 #SBATCH --job-name=THz-Zero-Shot
-#SBATCH --time=1:30:00
+#SBATCH --time=3:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --partition=gpu_mi300 #  or  gpu_mi300 or  gpu_a100_il or gpu_h100_il 
@@ -23,18 +23,12 @@ conda activate amd
 
 export PYTORCH_HIP_ALLOC_CONF=expandable_segments:True
 
-MESSAGE="Test run for THz-Zero-Shot classification with Nico4 - No History - Only Intro Prompt + One Frame per Prompt"
+MESSAGE="Experiment 1 - For Models Qwen and Mistral"
 
 if [[ $SLURM_ARRAY_TASK_ID -eq 0 ]]
 then
-    echo "==== ROCm GPU Status BEFORE Python Script ===="
-    rocm-smi
-    echo "==============================================="
-    python nico4_one_frame_per_prompt_only_intro_prompt.py --intro_prompt_filepath /pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/THz_Classification/prompts/1_nico_intro_prompt.txt --testnumber 1 --message "$MESSAGE"
+    python nico_get_thz_results.py --intro_prompt_filepath /pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/THz_Classification/prompts/1_nico_intro_prompt.txt --testnumber 1 --message "$MESSAGE"
 else
-    echo "==== ROCm GPU Status BEFORE Python Script ===="
-    rocm-smi
-    echo "==============================================="
     python nico4_one_frame_per_prompt_only_intro_prompt.py --intro_prompt_filepath /pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/THz_Classification/prompts/1_shashank_intro_prompt.txt --testnumber 2 --message "$MESSAGE"
 fi
 

@@ -224,7 +224,7 @@ def print_chat_element(chat_element_type, counter, text, image_filepath):
     else:
         print("\n\n",text, "\n")
 
-def main():
+def main(args):
 
     start_time = time.perf_counter()
     
@@ -280,8 +280,12 @@ def main():
     message_history = []
     #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-
+    if args.model != None: 
+        model_name = args.model
+    if args.should_add_context != None: 
+        should_add_context = should_add_context
+    
+    
     # Parse Paths & Prompts 
     output_filepath = get_output_filepath(testnumber, output_folder_filepath, output_addon)
     image_paths = get_image_paths(image_folder_filepath)
@@ -468,5 +472,21 @@ def main():
     
 
 if __name__ == "__main__":
-    main()
+
+    # Load the model and processor based on the selected model
+    parser = argparse.ArgumentParser(description="Give fairness score for generated images")
+    
+    parser.add_argument("--model", type=str, required=False, 
+                        choices=["mistral", "qwen",  "llama4", "molmo"], 
+                        help="VLM to use")
+
+    parser.add_argument("--should_add_context", type=bool, required=False, 
+                        choices=[True,False], 
+                        help="Add one Image Context")
+
+
+    args = parser.parse_args()
+
+
+    main(args)
     
