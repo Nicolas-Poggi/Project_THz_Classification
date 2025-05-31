@@ -230,9 +230,12 @@ def main():
     
     #--------------------------------------------------------------------------------------------------
     # Models - When changing the modelpath also change test_addon in parameters for the output file
-    #
+    #  
+    # mistral
+    # qwen
+    # llama4
     # mistralai/Mistral-Small-3.1-24B-Instruct-2503
-    # Qwen/Qwen2.5-VL-7B-Instruct
+    # Qwen/Qwen2.5-VL-7B-Instruct           
     # meta-llama/Llama-4-Scout-17B-16E-Instruct
     #---------------------------------------------------------------------------------------------------
 
@@ -259,14 +262,18 @@ def main():
     #Parameters for the output file
     testnumber = 1
     test_description = "Testing history capabilities with different models - If they can remember the first image (Mona Lisa) that was shown to them without being in chat_template --> AI remembers history"
-    output_folder_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/history_test/nico_results"
-    test_addon = "qwen"
+    output_folder_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/1_first_experiment/0_zero_shot"
+    output_addon = model_name
     
     #Special Parameters for the test
-    should_test_history = True
+    should_test_history = False
     test_frame_prompt_one_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/prompts/30_nico_test_history_first.txt"
     test_frame_prompt_two_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/prompts/31_nico_test_history_second.txt"
     test_image_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/history_test/mona_lisa.png"
+
+    #In-Context Learning
+    context_image_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Thz_Data/Data/Processed_Image_Data/0_02625_Backside_Softmax/combined_images_cropped/depth_image_layer_0663/depth_image_layer_0663_crop_0014_row_01_col_02.png"
+    should_add_context = False
 
     #Parameters for the script
     counter = 0
@@ -276,7 +283,7 @@ def main():
 
 
     # Parse Paths & Prompts 
-    output_filepath = get_output_filepath(testnumber, output_folder_filepath, test_addon)
+    output_filepath = get_output_filepath(testnumber, output_folder_filepath, output_addon)
     image_paths = get_image_paths(image_folder_filepath)
     system_prompt = get_promt(system_prompt_filepath)
     frame_prompt = get_promt(frame_prompt_filepath)
