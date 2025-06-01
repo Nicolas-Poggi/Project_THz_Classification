@@ -51,9 +51,17 @@ def get_csv_as_dataframe(csv_filename):
 def main():
     ########################################################################
     #INPUT VARIABLES
+    model_name = "mistral"
     input_csv_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Thz_Data/Data/Labeled_Data/0_02625_Backside_Softmax_Labeled.csv"
-    input_model_classification_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/evaluation_test/4-1-example-no-context-frame-by-frame-full-1400-test-sum.txt"
-    output_csv_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/1_first_experiment/0_zero_shot/2-eval-mistral"
+    input_model_classification_folder_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/1_first_experiment/0_zero_shot/"
+    output_csv_folder_filepath =                 "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/1_first_experiment/0_zero_shot/"
+    ########################################################################
+
+
+    #Calculate Filepaths
+
+    input_model_classification_filepath = f"{input_model_classification_folder_filepath}1-{model_name}.txt"
+    output_csv_filepath = f"{output_csv_folder_filepath}2-eval-{model_name}.csv"
 
 
 
@@ -70,7 +78,9 @@ def main():
 
     df.to_csv(output_csv_filepath, index=False)
 
-
+    print("\nFile Successfully created!")
+    print("IMPORTANT - CHECK CSV FILE FOR ROWS WHERE REGEX STATEMENT DIDNT WORK")
+    print("CHECK BY FILTERING FOR \"None\"")
 
 
 if __name__=="__main__":
