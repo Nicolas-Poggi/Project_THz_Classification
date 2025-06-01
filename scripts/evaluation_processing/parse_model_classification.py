@@ -48,28 +48,30 @@ def get_csv_as_dataframe(csv_filename):
 
 
 
-
-########################################################################
-#INPUT VARIABLES
-input_csv_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Thz_Data/Data/Labeled_Data/0_02625_Backside_Softmax_Labeled.csv"
-input_model_classification_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/evaluation_test/4-1-example-no-context-frame-by-frame-full-1400-test-sum.txt"
-output_csv_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/evaluation_test/test_labeled.csv"
-
-classifications = get_list_of_model_classification(classification_filepath=input_model_classification_filepath)
-
-df = get_csv_as_dataframe(csv_filename=input_csv_filepath)
-
-if len(classifications) != len(df):
-    print("\n\n",len(classifications),"\n\n")
-    raise ValueError("Mismatch between number of classifications and CSV rows.")
-
-
-df['Predicted_Label'] = classifications
-
-df.to_csv(output_csv_filepath, index=False)
+def main():
+    ########################################################################
+    #INPUT VARIABLES
+    input_csv_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Thz_Data/Data/Labeled_Data/0_02625_Backside_Softmax_Labeled.csv"
+    input_model_classification_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/evaluation_test/4-1-example-no-context-frame-by-frame-full-1400-test-sum.txt"
+    output_csv_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/1_first_experiment/0_zero_shot/2-eval-mistral"
 
 
 
+    classifications = get_list_of_model_classification(classification_filepath=input_model_classification_filepath)
+
+    df = get_csv_as_dataframe(csv_filename=input_csv_filepath)
+
+    if len(classifications) != len(df):
+        print("\n\n",len(classifications),"\n\n")
+        raise ValueError("Mismatch between number of classifications and CSV rows.")
+
+
+    df['Predicted_Label'] = classifications
+
+    df.to_csv(output_csv_filepath, index=False)
 
 
 
+
+if __name__=="__main__":
+    main()
