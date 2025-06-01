@@ -1,0 +1,6 @@
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:00<00:01,  2.20it/s]Loading checkpoint shards:  60%|██████    | 3/5 [00:00<00:00,  6.33it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:00<00:00,  8.03it/s]
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Device set to use cuda
+/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/torch/nn/modules/module.py:1341: UserWarning: expandable_segments not supported on this platform (Triggered internally at /pytorch/c10/hip/HIPAllocatorConfig.h:29.)
+  return t.to(
+You seem to be using the pipelines sequentially on GPU. In order to maximize efficiency please use a dataset
