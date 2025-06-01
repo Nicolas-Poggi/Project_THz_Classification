@@ -1,0 +1,7 @@
+--EVALUATION--------------------
+Model:       Qwen/Qwen2.5-VL-7B-Instruct
+Accuracy:    0.7207
+Precision:   0.3018
+Recall:      0.5000
+F1-Score:    0.3764
+--------------------------------

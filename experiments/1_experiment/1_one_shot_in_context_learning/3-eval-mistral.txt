@@ -1,0 +1,7 @@
+--EVALUATION--------------------
+Model:       mistralai/Mistral-Small-3.1-24B-Instruct-2503
+Accuracy:    0.7193
+Precision:   0.3187
+Recall:      0.5847
+F1-Score:    0.4126
+--------------------------------
