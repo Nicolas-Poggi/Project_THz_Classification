@@ -38,7 +38,7 @@ def get_answer(message_history, pipe, max_tokens):
     return generated_text
 
 def get_output_filepath(testnumber, output_folder, test_addon):
-    return f"{output_folder}/test{testnumber}-{test_addon}.txt"
+    return f"{output_folder}/{testnumber}-{test_addon}.txt"
 
 def get_edited_frame_prompt(frame_prompt, counter):
     edit_frame_prompt = frame_prompt.replace("[Image NR]", str(counter))
@@ -69,7 +69,7 @@ def get_test_information_str(system_prompt_filepath, frame_prompt_filepath,image
         
     test_information_str += "".join([
         f"Test Description:                {test_description}",
-        "--------------------"])
+        "\n--------------------"])
     return test_information_str
 
 def get_message_history_as_string_in_json_format(message_history):
@@ -129,9 +129,14 @@ def reduce_history_only_image_of_user_element(message_history, counter, max_stor
     message_history[(1 + 2*(i-1))]['content'].pop(0)
     return message_history
 
-def reduce_history_image_and_text_user_and_text_of_assistant_element(message_history):
-    message_history.pop(1) # User Prompt
-    message_history.pop(1) # Assistant Prompt
+def reduce_history_image_and_text_user_and_text_of_assistant_element(message_history, should_add_context):
+    if(should_add_context==False):
+        message_history.pop(1) # User Prompt
+        message_history.pop(1) # Assistant Prompt
+    else:
+        message_history.pop(2) # User Prompt
+        message_history.pop(2) # Assistant Prompt
+
     return message_history
 
 def append_chat_element_to_message_history(chat_element_type, message_history, text, image_filepath):
@@ -224,6 +229,15 @@ def print_chat_element(chat_element_type, counter, text, image_filepath):
     else:
         print("\n\n",text, "\n")
 
+def str2bool(v):
+    if isinstance(v, bool):
+        return v
+    if v.lower() in ("yes", "true", "t", "1"):
+        return True
+    elif v.lower() in ("no", "false", "f", "0"):
+        return False
+    raise argparse.ArgumentTypeError("Boolean value expected.")
+
 def main(args):
 
     start_time = time.perf_counter()
@@ -244,8 +258,8 @@ def main(args):
     # -- SET GLOBAL PARAMETERS --
 
     # General parameters for the test
-    frame_prompt_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/prompts/30_nico_test_history_first.txt"
-    image_folder_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Thz_Data/Data/Processed_Image_Data/0_02625_Backside_Softmax/"
+    frame_prompt_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/prompts/2_nico_frame_prompt.txt"
+    image_folder_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Thz_Data/Data/Processed_Image_Data/0_02625_Backside_Softmax/combined_images"
     model_name = "qwen"
     max_tokens = 200
     max_storage = 1 # max number of prompts/images in memory [including the current prompt being used]
@@ -272,8 +286,10 @@ def main(args):
     test_image_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/history_test/mona_lisa.png"
 
     #In-Context Learning
-    context_image_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Thz_Data/Data/Processed_Image_Data/0_02625_Backside_Softmax/combined_images_cropped/depth_image_layer_0663/depth_image_layer_0663_crop_0014_row_01_col_02.png"
     should_add_context = False
+    in_context_learning_image_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Thz_Data/Data/Processed_Image_Data/0_02625_Backside_Softmax/combined_images_cropped/depth_image_layer_0663/depth_image_layer_0663_crop_0014_row_01_col_02.png"
+    in_context_learning_prompt_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/prompts/40_nico_in_context_learning_prompt.txt"
+
 
     #Parameters for the script
     counter = 0
@@ -282,17 +298,22 @@ def main(args):
 
     if args.model != None: 
         model_name = args.model
+        output_addon = args.model
     if args.should_add_context != None: 
         should_add_context = args.should_add_context
     if args.test_description != None: 
         test_description = args.test_description
-    
+    if args.output_folder_filepath != None: 
+        output_folder_filepath = args.output_folder_filepath
+
     # Parse Paths & Prompts 
     output_filepath = get_output_filepath(testnumber, output_folder_filepath, output_addon)
     image_paths = get_image_paths(image_folder_filepath)
     system_prompt = get_promt(system_prompt_filepath)
     frame_prompt = get_promt(frame_prompt_filepath)
+    in_context_learning_prompt = get_promt(in_context_learning_prompt_filepath)
     model_path = get_model_path(model_name)
+
     test_frame_prompt_one = ""
 
     if(should_test_history == True):
@@ -342,6 +363,27 @@ def main(args):
     append_chat_element_to_message_history(chat_element_type="system", message_history=message_history,                  text=system_prompt, image_filepath=None)
     append_chat_element_to_file(           chat_element_type="system", counter=counter, output_filepath=output_filepath, text=system_prompt, image_filepath=None)
     print_chat_element(                    chat_element_type="system", counter=counter,                                  text=system_prompt, image_filepath=None)
+    
+
+
+    if(should_add_context == True):
+        #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        # -- ADD ONE CROP AS CONTEXT FOR IN CONTEXT LEARNING --
+        
+        #--------------------------------------------------------------------------------------------------
+        # -- ADD USER CHAT ELEMENT --
+        #
+        # Append the new "system" chatElement to the message_history  (input prompt: only text)
+        # Append the system chatElement to the output file
+        # Print the system chatElement - simple format
+        #--------------------------------------------------------------------------------------------------
+        append_chat_element_to_message_history(chat_element_type="user", message_history=message_history,                  text=in_context_learning_prompt, image_filepath=in_context_learning_image_filepath)
+        append_chat_element_to_file(           chat_element_type="user", counter=counter, output_filepath=output_filepath, text=in_context_learning_prompt, image_filepath=in_context_learning_image_filepath)
+        print_chat_element(                    chat_element_type="user", counter=counter,                                  text=in_context_learning_prompt, image_filepath=in_context_learning_image_filepath)
+        #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
+
+
     counter += 1
 
 
@@ -424,9 +466,9 @@ def main(args):
         # Append the message history to the output file
         # Print the message history in the "Json" format
         #--------------------------------------------------------------------------------------------------
-        # message_history_str_in_json = get_message_history_as_string_in_json_format(message_history)
-        # append_chat_element_to_file(chat_element_type="message_history_json", counter=counter, output_filepath=output_filepath, text=message_history_str_in_json, image_filepath=None)
-        # print_chat_element(         chat_element_type="message_history_json", counter=counter,                                  text=message_history_str_in_json, image_filepath=None)
+        message_history_str_in_json = get_message_history_as_string_in_json_format(message_history)
+        append_chat_element_to_file(chat_element_type="message_history_json", counter=counter, output_filepath=output_filepath, text=message_history_str_in_json, image_filepath=None)
+        print_chat_element(         chat_element_type="message_history_json", counter=counter,                                  text=message_history_str_in_json, image_filepath=None)
 
 
 
@@ -444,9 +486,13 @@ def main(args):
         #--------------------------------------------------------------------------------------------------
         if(counter > max_storage):
             # reduce_history_only_image_of_user_element(message_history=message_history, counter=counter, max_storage=max_storage)
-            reduce_history_image_and_text_user_and_text_of_assistant_element(message_history=message_history)    
             # break
 
+            if(should_add_context==False):
+                reduce_history_image_and_text_user_and_text_of_assistant_element(message_history=message_history, should_add_context=False)    
+            else:
+                reduce_history_image_and_text_user_and_text_of_assistant_element(message_history=message_history, should_add_context=True)
+            
 
         #If currently testing_History is True - Stop Test after 10 Images (break the loop)
         if(should_test_history & (counter == 11)):
@@ -481,13 +527,14 @@ if __name__ == "__main__":
                         choices=["mistral", "qwen",  "llama4", "molmo"], 
                         help="VLM to use")
 
-    parser.add_argument("--should_add_context", type=bool, required=False, 
-                        choices=[True,False], 
+    parser.add_argument("--should_add_context", type=str2bool, required=False, 
                         help="Add one Image Context")
     
     parser.add_argument("--test_description", type=str, required=False, 
-                        help="Add one Image Context")
+                        help="description of the Test to be conducted")
     
+    parser.add_argument("--output_folder_filepath", type=str, required=False, 
+                        help="Output_Folder_Filepath")
     
 
 
@@ -495,4 +542,3 @@ if __name__ == "__main__":
 
 
     main(args)
-    

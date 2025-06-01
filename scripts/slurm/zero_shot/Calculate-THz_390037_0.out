@@ -1,0 +1,4 @@
+Started job on Sun Jun  1 03:03:15 AM CEST 2025
+importing libraries (torch, transformers, os, argparse, time)
+Sending the next Image now. Analyse it and answer with reasoning. Here is the Image Nr. [Image NR]
+creating pipeline

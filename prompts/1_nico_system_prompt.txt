@@ -9,7 +9,8 @@ In the following prompts I will send each Terahertz image one at a time in the d
  
 <BEGIN Return Format Each Image> 
 ### Frame Number 
-### Observation: Give a  clear description of the region in that image where C4 appears. 
+### Description: Give a  clear description of the region in that image where C4 appears. 
+### Observation: Give a clear Classification of either "Yes C4" or "No C4". 
 ### Memory Update if significant changes detected. 
 <END Return Format Each Image> 
  
