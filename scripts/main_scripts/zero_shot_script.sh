@@ -8,8 +8,8 @@
 #SBATCH --mem=100gb
 #SBATCH --array=0-1
 #SBATCH --cpus-per-task=16
-#SBATCH --output=slurm/zero_shot/Calculate-THz_%A_%a.out 
-#SBATCH --error=slurm/zero_shot/Calculate-THz_%A_%a.err
+#SBATCH --output=slurm/2_experiment/zero_shot/Calculate-THz_%A_%a.out 
+#SBATCH --error=slurm/2_experiment/zero_shot/Calculate-THz_%A_%a.err
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=nicolas.poggi.gomes.da.silva@students.uni-mannheim.de
 
@@ -28,10 +28,10 @@ DESCRIPTION="Experiment 1 - For Models Qwen and Mistral"
 if [[ $SLURM_ARRAY_TASK_ID -eq 0 ]]
 then
     #python nico_get_thz_result.py --model qwen --should_add_context False --test_description "Experiment 1 - For Models Qwen and Mistral"
-    python nico_get_thz_result.py --model qwen --should_add_context False --test_description "$DESCRIPTION"
+    python nico_get_thz_result.py --model qwen --should_add_context False --test_description "$DESCRIPTION" --output_folder_filepath /pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/2_experiment/0_zero_shot
 else
     #python nico_get_thz_result.py --model mistral --should_add_context False --test_description "Experiment 1 - For Models Qwen and Mistral"
-    python nico_get_thz_result.py --model mistral --should_add_context False --test_description "$DESCRIPTION"
+    #python nico_get_thz_result.py --model mistral --should_add_context False --test_description "$DESCRIPTION" --output_folder_filepath /pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/2_experiment/0_zero_shot
 fi
 
 echo "Ended job on $(date)"
