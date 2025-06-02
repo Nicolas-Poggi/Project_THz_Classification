@@ -8,7 +8,7 @@ The Project contains two methods for running a model classification (MAIN METHOD
 ### Using Nico's Script (MAIN Method)
 
 Important parameters (here only the most important are mentioned) can be set in 2 different ways:
-1. As "variables" in the "main" method of the script [[shashank_get_thz_result.py](https://github.com/Nicolas-Poggi/Project_THz_Classification/blob/main/scripts/main_scripts/shashank_get_thz_result.py)]
+1. As "variables" in the "main" method of the script [[nico_get_thz_result.py](https://github.com/Nicolas-Poggi/Project_THz_Classification/blob/main/scripts/main_scripts/nico_get_thz_result.py)]
 2. As "arguments" when running the script from the command line [EXCEPTION is the "should_test_history" and "image_folder_filepath" Parameter].
 <br><br>
 
