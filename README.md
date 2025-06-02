@@ -1,7 +1,7 @@
 # Classification and Reasoning on THz data using VLMs
 
 ## Project Overview / Description of Folders
-* [experiments](https://github.com/Nicolas-Poggi/Project_THz_Classification/tree/main/experiments) - Shows all Experiment Results regarding the classification of THz Images. The main experiment results that should be looked at (for both Zero-Shot and In-Context Learning) can be found in the [[1_experiment](https://github.com/Nicolas-Poggi/Project_THz_Classification/tree/main/experiments/1_experiment)] folder. The other folders are "past experiments" that were conducted for testing reasons. A experiment result has 3 main parts:
+* [experiments](https://github.com/Nicolas-Poggi/Project_THz_Classification/tree/main/experiments) - Shows all Experiment Results regarding the classification of THz Images. The main experiment results that should be looked at (for both Zero-Shot and In-Context Learning) can be found in the [[1_experiment](https://github.com/Nicolas-Poggi/Project_THz_Classification/tree/main/experiments/1_experiment)] folder. The other folders are "past experiments" that were conducted for testing reasons (not important). A experiment result has 3 main parts:
   * **1-[model_name].txt** - It contains the experiment settings and classification output of the VLM model [model_name] for the 1400 THz Images of one THz Dataset.
 
   * **2-eval-[model_name].csv** - It contains the "True_Label" of each THz Frame (in total 1400) and the "Predicted_Label" that the used VLM model classified for that frame.
