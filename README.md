@@ -1,7 +1,9 @@
 # Classification and Reasoning on THz data using VLMs
 
 ## Project Overview / Description of Folders
-* [experiments](https://github.com/Nicolas-Poggi/Project_THz_Classification/tree/main/experiments) - Shows all Experiment Results regarding the classification of THz Images. An experiment result has 3 parts:
+* [experiments](https://github.com/Nicolas-Poggi/Project_THz_Classification/tree/main/experiments) - Shows all Experiment Results regarding the classification of THz Images. Main experiment results (for both Zero-Shot and In-Context Learning) can be found in the [1_experiment](https://github.com/Nicolas-Poggi/Project_THz_Classification/tree/main/experiments/1_experiment) folder. The other folders are "past experiments" that were conducted for testing reasons.
+  
+The experiment result has 3 main parts:
   * **1-[model_name].txt** - It contains the classification output of the VLM model [model_name] for the 1400 THz Images of one THz Dataset.
 
   * **2-eval-[model_name].csv** - It  contains the "True_Label" of each THz Frame (in total 1400) and the "Predicted_Label" that the used VLM model classified for that frame.
@@ -46,13 +48,15 @@ pip install --upgrade --no-deps --force-reinstall torch
 ```
 
 
-## Usage / Running a model
+## Usage / Running a model classification
+The Project contains two methods for running a model classification (MAIN METHOD is preferred):
 
-### Using Nicos Script (MAIN Method)
+### Using Nico's Script (MAIN Method)
 
-### Using Shashanks Script (OLD Method) 
 
-Currently the script is only set up for testing purposes (testing history capabilities of models). In order to run the classification "normally" (i.e. without testing the history) you have to change the "should_test_history" Parameter to "False". 
+### Using Shashank's Script (OLD Method) 
+
+Currently this script is only set up for testing purposes (testing history capabilities of models). In order to run the classification "normally" (i.e. without testing the history) you have to change the "should_test_history" Parameter to "False". 
 
 Important parameters can be set in 2 different ways:
 1. In the main Method of the script [[shashank_get_thz_result.py](https://github.com/Nicolas-Poggi/Project_THz_Classification/blob/main/scripts/main_scripts/shashank_get_thz_result.py)]
