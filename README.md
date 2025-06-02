@@ -46,23 +46,46 @@ pip install --upgrade --no-deps --force-reinstall torch
 ```
 
 
-## Usage
+## Usage / Running a model
 
-> model_name : "qwen", "llama4" or "mistral"
+### Using Nicos Script (MAIN Method)
 
-> category_name : luxury", "culture" or "maintenance"
-The prompts for each policy category are in ./policies
 
-> data_path : path to dataset root, such that images of different frames are inside this path.
+
+### Using Shashanks Script (OLD Method) 
+
+Currently the Script is only set up for testing purposes (testing history capabilities of models). Parameters to be set are given the "main" method of the python script [[shashank_get_thz_result.py](https://github.com/Nicolas-Poggi/Project_THz_Classification/blob/main/scripts/main_scripts/shashank_get_thz_result.py)]. 
+
+Important parameters can be set as "Arguments" [EXCEPTION is the "should_test_history" Parameter]. In order to run the classification normally you have to change the "should_test_history" Parameter to "False". 
+<br><br>
+
+> model_name : "qwen" or "mistral"
+<br>
+
+> should_test_history - boolean flag for testing if the model remebers the history (past prompts), without passing them in the "chat_template". 
+<br>
+
+> image_folder_filepath : path to dataset root, such that images of different frames are inside this path.
 ```
-for example, one images path is: "/ceph/sagnihot/projects/THz_imaging/lens_softmax_frames/frame_0000.png"
+for example, one images path is: "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Thz_Data/Data/Processed_Image_Data/0_02625_Backside_Softmax/depth_image_layer_0001.png"
 then,
-data_path : "/ceph/sagnihot/projects/THz_imaging/lens_softmax_frames"
+data_path : "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Thz_Data/Data/Processed_Image_Data/0_02625_Backside_Softmax/"
+```
+<br>
+
+> output_folder_filepath : path to save the output txt file of the generated output.
+```
+Example output_folder_filepath: "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/history_test/shashank_results"
+```
+<br>
+
+Examples of running the script could look like this:
+* Setting parameters within the script:
+```
+python -W ignore shashank_get_thz_result.py
 ```
 
-> output_path: path to save the output txt file of the generated output, default: "./experiments"
-
-
+* Setting parameters as arguments:
 ```
-python -W ignore get_answer_one_frame.py --model mistral --model model_name --data_path data_path --output_path output_path
+python -W ignore shashank_get_thz_result.py --model qwen --image_folder_filepath /pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Thz_Data/Data/Processed_Image_Data/0_02625_Backside_Softmax/ --output_folder_filepath /pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/history_test/shashank_results
 ```
