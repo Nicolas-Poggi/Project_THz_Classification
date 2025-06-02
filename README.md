@@ -1,5 +1,21 @@
 # Classification and Reasoning on THz data using VLMs
 
+## Project Overview / Description of Folders
+* [experiments](https://github.com/Nicolas-Poggi/Project_THz_Classification/tree/main/experiments) - Shows all Experiment Results regarding the classification of THz Images. An experiment result has 3 parts:
+  * **1-[model_name].txt** - It contains the classification output of the VLM model [model_name] for the 1400 THz Images of one THz Dataset.
+
+  * **2-eval-[model_name].csv** - It  contains the "True_Label" of each THz Frame (in total 1400) and the "Predicted_Label" that the used VLM model classified for that frame.
+
+  * **3-eval-[model_name].txt** - It contains the evaluation results of the THz classification for the given model.  
+
+* [prompts](https://github.com/Nicolas-Poggi/Project_THz_Classification/tree/main/prompts) - Contains the prompts utilized for the experiment (including some test prompts).
+  
+* [scripts](https://github.com/Nicolas-Poggi/Project_THz_Classification/tree/main/scripts) - Contains the utilized scripts for python scripts for:
+  * Running a classification - [main_scripts](https://github.com/Nicolas-Poggi/Project_THz_Classification/tree/main/scripts/main_scripts)
+  * Creating and Processing THz Images and Videos - [image_and video_processing](https://github.com/Nicolas-Poggi/Project_THz_Classification/tree/main/scripts/image_and_video_processing)
+  * Preparing Labeled Files and Creating Evaluations from Model Classifications  - [evaluation_processing](https://github.com/Nicolas-Poggi/Project_THz_Classification/tree/main/scripts/evaluation_processing)
+
+
 ## Setup
 
 1. create conda environtment and install essential libraries
