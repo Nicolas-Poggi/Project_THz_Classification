@@ -50,13 +50,13 @@ pip install --upgrade --no-deps --force-reinstall torch
 
 ### Using Nicos Script (MAIN Method)
 
-
-
 ### Using Shashanks Script (OLD Method) 
 
-Currently the Script is only set up for testing purposes (testing history capabilities of models). Parameters to be set are given the "main" method of the python script [[shashank_get_thz_result.py](https://github.com/Nicolas-Poggi/Project_THz_Classification/blob/main/scripts/main_scripts/shashank_get_thz_result.py)]. 
+Currently the script is only set up for testing purposes (testing history capabilities of models). In order to run the classification "normally" (i.e. without testing the history) you have to change the "should_test_history" Parameter to "False". 
 
-Important parameters can be set as "Arguments" [EXCEPTION is the "should_test_history" Parameter]. In order to run the classification normally you have to change the "should_test_history" Parameter to "False". 
+Important parameters can be set in 2 different ways:
+1. In the main Method of the script [[shashank_get_thz_result.py](https://github.com/Nicolas-Poggi/Project_THz_Classification/blob/main/scripts/main_scripts/shashank_get_thz_result.py)]
+2. As "Arguments" when running the model from the Command Line [EXCEPTION is the "should_test_history" Parameter].
 <br><br>
 
 > model_name : "qwen" or "mistral"
