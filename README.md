@@ -72,14 +72,14 @@ Important parameters (here only the most important are mentioned) can be set in 
 for example, one images path is: "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Thz_Data/Data/Processed_Image_Data/0_02625_Backside_Softmax/combined_images/depth_image_layer_0001.png"
 then,
 data_path : "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Thz_Data/Data/Processed_Image_Data/0_02625_Backside_Softmax/combined_images"
-!!! NOTICE WITHOUT BACKSLASH !!!
+!!! NOTICE WITHOUT BACKSLASH AT END!!!
 ```
 <br>
 
 > output_folder_filepath : path to save the output txt file of the generated output.
 ```
 Example output_folder_filepath: "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/1_experiment/0_zero_shot"
-!!! NOTICE WITHOUT BACKSLASH !!!
+!!! NOTICE WITHOUT BACKSLASH AT END!!!
 ```
 <br>
 
@@ -115,14 +115,14 @@ Important parameters (here only the most important are mentioned) can be set in 
 for example, one images path is: "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Thz_Data/Data/Processed_Image_Data/0_02625_Backside_Softmax/depth_image_layer_0001.png"
 then,
 data_path : "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Thz_Data/Data/Processed_Image_Data/0_02625_Backside_Softmax/"
-!!! NOTICE WITH BACKSLASH !!!
+!!! NOTICE WITH BACKSLASH AT END!!!
 ```
 <br>
 
 > output_folder_filepath : path to save the output txt file of the generated output.
 ```
 Example output_folder_filepath: "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/history_test/shashank_results"
-!!! NOTICE WITHOUT BACKSLASH !!!
+!!! NOTICE WITHOUT BACKSLASH AT END!!!
 ```
 <br>
 
