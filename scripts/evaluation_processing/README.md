@@ -27,6 +27,10 @@ The script expects the classification `.txt` file to be named as follows: 1-{mod
 <br>
 The output will be saved to: 2-eval-{model_name}.csv
 
+### Warnings⚠️
+Always check the output CSV for any rows where the regex extraction failed. These will be marked with None in the Predicted_Label column.
+You can filter the CSV to find these cases and manually inspect/fix if necessary.
+
 
 ### How to Run ▶️ 
 
@@ -35,3 +39,4 @@ Once parameters are configured, execute the script by running:
 ```
 python parse_model_classification.py
 ```
+
