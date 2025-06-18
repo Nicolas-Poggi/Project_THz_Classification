@@ -1,6 +1,6 @@
 import pandas as pd
 import re
-
+import argparse
 def get_list_of_model_classification_new(classification_filepath):
     """
     Extracts all frame-wise observations (e.g., 'No C4', 'Yes C4') from the file,
@@ -76,21 +76,28 @@ def get_csv_as_dataframe(csv_filepath):
 
 
 
-def main():
+def main(args):
     ########################################################################
     #INPUT VARIABLES
     model_name = "qwen"
     input_csv_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Thz_Data/Data/Labeled_Data/0_02625_Backside_Softmax_Labeled.csv"
     folder_filepath = "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/2_experiment/0_zero_shot"
-    input_model_classification_folder_filepath = folder_filepath
-    output_csv_folder_filepath = folder_filepath
+
     ########################################################################
 
+    if args.model != None: 
+        model_name = args.model.split("/")[-1]
+        output_addon = model_name.replace(".","")
+    if args.folder_filepath != None: 
+        folder_filepath = args.folder_filepath
+
+    input_model_classification_folder_filepath = folder_filepath
+    output_csv_folder_filepath = folder_filepath
 
     #Calculate Filepaths
 
-    input_model_classification_filepath = f"{input_model_classification_folder_filepath}/1-{model_name}.txt"
-    output_csv_filepath = f"{output_csv_folder_filepath}/2-eval-{model_name}.csv"
+    input_model_classification_filepath = f"{input_model_classification_folder_filepath}/1-{output_addon}.txt"
+    output_csv_filepath = f"{output_csv_folder_filepath}/2-eval-{output_addon}.csv"
 
 
 
@@ -113,4 +120,15 @@ def main():
 
 
 if __name__=="__main__":
-    main()
+    # Load the model and processor based on the selected model
+    parser = argparse.ArgumentParser(description="Give fairness score for generated images")
+    
+    parser.add_argument("--model", type=str, required=False, 
+                        help="VLM to use")
+    
+    parser.add_argument("--folder_filepath", type=str, required=False, 
+                        help="Input_and_Output_Folder_Filepath")
+    
+    args = parser.parse_args()
+    
+    main(args)

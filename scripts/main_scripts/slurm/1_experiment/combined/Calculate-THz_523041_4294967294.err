@@ -1,0 +1,147 @@
+Fetching 38 files:   0%|          | 0/38 [00:00<?, ?it/s]Fetching 38 files:   3%|▎         | 1/38 [07:50<4:49:59, 470.26s/it]Fetching 38 files:   5%|▌         | 2/38 [09:05<2:22:51, 238.11s/it]Fetching 38 files:  16%|█▌        | 6/38 [09:55<34:12, 64.14s/it]   Fetching 38 files:  24%|██▎       | 9/38 [11:53<25:34, 52.91s/it]Fetching 38 files:  26%|██▋       | 10/38 [12:54<25:23, 54.41s/it]Fetching 38 files:  29%|██▉       | 11/38 [16:55<41:27, 92.13s/it]Fetching 38 files:  32%|███▏      | 12/38 [17:29<34:17, 79.13s/it]Fetching 38 files:  34%|███▍      | 13/38 [17:31<25:09, 60.39s/it]Fetching 38 files:  37%|███▋      | 14/38 [17:52<20:03, 50.14s/it]Fetching 38 files:  39%|███▉      | 15/38 [18:01<15:01, 39.20s/it]Fetching 38 files:  42%|████▏     | 16/38 [18:22<12:32, 34.18s/it]Fetching 38 files:  45%|████▍     | 17/38 [18:44<10:41, 30.55s/it]Fetching 38 files:  50%|█████     | 19/38 [19:27<08:24, 26.54s/it]Fetching 38 files:  53%|█████▎    | 20/38 [20:27<10:23, 34.64s/it]Fetching 38 files:  55%|█████▌    | 21/38 [20:42<08:24, 29.66s/it]Fetching 38 files:  58%|█████▊    | 22/38 [22:01<11:25, 42.84s/it]Fetching 38 files:  61%|██████    | 23/38 [22:42<10:36, 42.42s/it]Fetching 38 files:  63%|██████▎   | 24/38 [23:12<09:03, 38.80s/it]Fetching 38 files:  68%|██████▊   | 26/38 [23:29<05:03, 25.27s/it]Fetching 38 files:  71%|███████   | 27/38 [24:48<07:02, 38.38s/it]Fetching 38 files:  79%|███████▉  | 30/38 [24:53<02:36, 19.59s/it]Fetching 38 files:  82%|████████▏ | 31/38 [25:40<02:55, 25.05s/it]Fetching 38 files:  84%|████████▍ | 32/38 [25:53<02:13, 22.27s/it]Fetching 38 files:  87%|████████▋ | 33/38 [26:18<01:54, 22.88s/it]Fetching 38 files:  92%|█████████▏| 35/38 [26:28<00:47, 15.71s/it]Fetching 38 files:  95%|█████████▍| 36/38 [26:29<00:24, 12.36s/it]Fetching 38 files: 100%|██████████| 38/38 [26:29<00:00, 41.82s/it]
+Loading checkpoint shards:   0%|          | 0/38 [00:00<?, ?it/s]Loading checkpoint shards:   3%|▎         | 1/38 [00:00<00:14,  2.57it/s]Loading checkpoint shards:  21%|██        | 8/38 [00:00<00:01, 19.91it/s]Loading checkpoint shards:  37%|███▋      | 14/38 [00:00<00:00, 30.53it/s]Loading checkpoint shards:  55%|█████▌    | 21/38 [00:00<00:00, 40.03it/s]Loading checkpoint shards:  74%|███████▎  | 28/38 [00:00<00:00, 46.63it/s]Loading checkpoint shards:  92%|█████████▏| 35/38 [00:00<00:00, 51.48it/s]Loading checkpoint shards: 100%|██████████| 38/38 [00:00<00:00, 39.22it/s]
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Device set to use cuda
+/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/torch/nn/modules/module.py:1341: UserWarning: expandable_segments not supported on this platform (Triggered internally at /pytorch/c10/hip/HIPAllocatorConfig.h:29.)
+  return t.to(
+Traceback (most recent call last):
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/nico_get_thz_result.py", line 560, in <module>
+    main(args)
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/nico_get_thz_result.py", line 347, in main
+    pipe = pipeline("image-text-to-text", model=model_path, device="cuda", torch_dtype=torch.bfloat16)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/transformers/pipelines/__init__.py", line 1180, in pipeline
+    return pipeline_class(model=model, framework=framework, task=task, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/transformers/pipelines/image_text_to_text.py", line 182, in __init__
+    super().__init__(*args, **kwargs)
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/transformers/pipelines/base.py", line 996, in __init__
+    self.model.to(self.device)
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/transformers/modeling_utils.py", line 3698, in to
+    return super().to(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1355, in to
+    return self._apply(convert)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/torch/nn/modules/module.py", line 915, in _apply
+    module._apply(fn)
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/torch/nn/modules/module.py", line 915, in _apply
+    module._apply(fn)
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/torch/nn/modules/module.py", line 915, in _apply
+    module._apply(fn)
+  [Previous line repeated 2 more times]
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/torch/nn/modules/module.py", line 942, in _apply
+    param_applied = fn(param)
+                    ^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1341, in convert
+    return t.to(
+           ^^^^^
+torch.OutOfMemoryError: HIP out of memory. Tried to allocate 462.00 MiB. GPU 0 has a total capacity of 94.17 GiB of which 205.50 MiB is free. Of the allocated memory 54.59 GiB is allocated by PyTorch, and 88.51 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_HIP_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/parse_model_classification.py", line 133, in <module>
+    main(args)
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/parse_model_classification.py", line 103, in main
+    classifications = get_list_of_model_classification_new(classification_filepath=input_model_classification_filepath)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/parse_model_classification.py", line 19, in get_list_of_model_classification_new
+    with open(classification_filepath, 'r') as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/1_experiment/0_zero_shot/1-Qwen2.5-VL-72B-Instruct.txt'
+Traceback (most recent call last):
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/evaluate_model_classification.py", line 101, in <module>
+    main(args)
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/evaluate_model_classification.py", line 71, in main
+    df = get_csv_as_dataframe(input_evaluation_csv_filepath)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/evaluate_model_classification.py", line 6, in get_csv_as_dataframe
+    return pd.read_csv(csv_filepath)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/1_experiment/0_zero_shot/2-eval-Qwen25-VL-72B-Instruct.csv'
+Loading checkpoint shards:   0%|          | 0/38 [00:00<?, ?it/s]Loading checkpoint shards:   3%|▎         | 1/38 [00:00<00:09,  3.73it/s]Loading checkpoint shards:  18%|█▊        | 7/38 [00:00<00:01, 22.69it/s]Loading checkpoint shards:  39%|███▉      | 15/38 [00:00<00:00, 40.06it/s]Loading checkpoint shards:  58%|█████▊    | 22/38 [00:00<00:00, 49.32it/s]Loading checkpoint shards:  79%|███████▉  | 30/38 [00:00<00:00, 56.19it/s]Loading checkpoint shards: 100%|██████████| 38/38 [00:00<00:00, 47.85it/s]
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Device set to use cuda
+/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/torch/nn/modules/module.py:1341: UserWarning: expandable_segments not supported on this platform (Triggered internally at /pytorch/c10/hip/HIPAllocatorConfig.h:29.)
+  return t.to(
+Traceback (most recent call last):
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/nico_get_thz_result.py", line 560, in <module>
+    main(args)
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/nico_get_thz_result.py", line 347, in main
+    pipe = pipeline("image-text-to-text", model=model_path, device="cuda", torch_dtype=torch.bfloat16)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/transformers/pipelines/__init__.py", line 1180, in pipeline
+    return pipeline_class(model=model, framework=framework, task=task, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/transformers/pipelines/image_text_to_text.py", line 182, in __init__
+    super().__init__(*args, **kwargs)
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/transformers/pipelines/base.py", line 996, in __init__
+    self.model.to(self.device)
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/transformers/modeling_utils.py", line 3698, in to
+    return super().to(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1355, in to
+    return self._apply(convert)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/torch/nn/modules/module.py", line 915, in _apply
+    module._apply(fn)
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/torch/nn/modules/module.py", line 915, in _apply
+    module._apply(fn)
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/torch/nn/modules/module.py", line 915, in _apply
+    module._apply(fn)
+  [Previous line repeated 2 more times]
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/torch/nn/modules/module.py", line 942, in _apply
+    param_applied = fn(param)
+                    ^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1341, in convert
+    return t.to(
+           ^^^^^
+torch.OutOfMemoryError: HIP out of memory. Tried to allocate 462.00 MiB. GPU 0 has a total capacity of 94.17 GiB of which 205.50 MiB is free. Of the allocated memory 54.59 GiB is allocated by PyTorch, and 88.51 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_HIP_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/parse_model_classification.py", line 133, in <module>
+    main(args)
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/parse_model_classification.py", line 103, in main
+    classifications = get_list_of_model_classification_new(classification_filepath=input_model_classification_filepath)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/parse_model_classification.py", line 19, in get_list_of_model_classification_new
+    with open(classification_filepath, 'r') as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/1_experiment/1_one_shot_in_context_learning/1-Qwen2.5-VL-72B-Instruct.txt'
+Traceback (most recent call last):
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/evaluate_model_classification.py", line 101, in <module>
+    main(args)
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/evaluate_model_classification.py", line 71, in main
+    df = get_csv_as_dataframe(input_evaluation_csv_filepath)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/evaluate_model_classification.py", line 6, in get_csv_as_dataframe
+    return pd.read_csv(csv_filepath)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/1_experiment/1_one_shot_in_context_learning/2-eval-Qwen25-VL-72B-Instruct.csv'

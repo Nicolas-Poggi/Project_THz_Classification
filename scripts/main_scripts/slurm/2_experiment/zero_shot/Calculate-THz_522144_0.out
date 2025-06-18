@@ -1,0 +1,16 @@
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc3n083
+Job ID: 522145
+Array Job ID: 522144_0
+Cluster: uc3
+User/Group: ma_npoggigo/ma_ma
+State: CANCELLED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 00:05:04 core-walltime
+Job Wall-clock time: 00:00:19
+Memory Utilized: 0.00 MB
+Memory Efficiency: 0.00% of 100.00 GB (100.00 GB/node)

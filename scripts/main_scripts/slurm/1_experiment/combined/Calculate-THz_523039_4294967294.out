@@ -1,0 +1,21 @@
+importing libraries (torch, transformers, os, argparse, time)
+Sending the next Image now. Analyse it and answer with reasoning. Here is the Image Nr. [Image NR]
+creating pipeline
+importing libraries (torch, transformers, os, argparse, time)
+Sending the next Image now. Analyse it and answer with reasoning. Here is the Image Nr. [Image NR]
+creating pipeline
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc3n083
+Job ID: 523039
+Cluster: uc3
+User/Group: ma_npoggigo/ma_ma
+State: FAILED (exit code 1)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:19:15
+CPU Efficiency: 4.38% of 07:19:12 core-walltime
+Job Wall-clock time: 00:27:27
+Memory Utilized: 7.07 GB
+Memory Efficiency: 7.07% of 100.00 GB (100.00 GB/node)

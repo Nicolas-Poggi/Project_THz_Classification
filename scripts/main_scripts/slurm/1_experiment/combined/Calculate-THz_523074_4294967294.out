@@ -1,0 +1,27 @@
+importing libraries (torch, transformers, os, argparse, time)
+Sending the next Image now. Analyse it and answer with reasoning. Here is the Image Nr. [Image NR]
+creating pipeline
+The repository for microsoft/Phi-4-multimodal-instruct contains custom code which must be executed to correctly load the model. You can inspect the repository content at https://hf.co/microsoft/Phi-4-multimodal-instruct.
+You can avoid this prompt in future by passing the argument `trust_remote_code=True`.
+
+Do you wish to run the custom code? [y/N] importing libraries (torch, transformers, os, argparse, time)
+Sending the next Image now. Analyse it and answer with reasoning. Here is the Image Nr. [Image NR]
+creating pipeline
+The repository for microsoft/Phi-4-multimodal-instruct contains custom code which must be executed to correctly load the model. You can inspect the repository content at https://hf.co/microsoft/Phi-4-multimodal-instruct.
+You can avoid this prompt in future by passing the argument `trust_remote_code=True`.
+
+Do you wish to run the custom code? [y/N] 
+============================= JOB FEEDBACK =============================
+
+NodeName=uc3n083
+Job ID: 523074
+Cluster: uc3
+User/Group: ma_npoggigo/ma_ma
+State: FAILED (exit code 1)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:48
+CPU Efficiency: 3.66% of 00:21:52 core-walltime
+Job Wall-clock time: 00:01:22
+Memory Utilized: 788.76 MB
+Memory Efficiency: 0.77% of 100.00 GB (100.00 GB/node)

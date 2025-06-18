@@ -1,0 +1,82 @@
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  3.34it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  4.85it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  4.54it/s]
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Device set to use cuda
+/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/torch/nn/modules/module.py:1341: UserWarning: expandable_segments not supported on this platform (Triggered internally at /pytorch/c10/hip/HIPAllocatorConfig.h:29.)
+  return t.to(
+You seem to be using the pipelines sequentially on GPU. In order to maximize efficiency please use a dataset
+Traceback (most recent call last):
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/parse_model_classification.py", line 133, in <module>
+    main(args)
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/parse_model_classification.py", line 103, in main
+    classifications = get_list_of_model_classification_new(classification_filepath=input_model_classification_filepath)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/parse_model_classification.py", line 19, in get_list_of_model_classification_new
+    with open(classification_filepath, 'r') as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/1_experiment/0_zero_shot/1-Qwen2.5-VL-3B-Instruct.txt'
+Traceback (most recent call last):
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/evaluate_model_classification.py", line 101, in <module>
+    main(args)
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/evaluate_model_classification.py", line 71, in main
+    df = get_csv_as_dataframe(input_evaluation_csv_filepath)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/evaluate_model_classification.py", line 6, in get_csv_as_dataframe
+    return pd.read_csv(csv_filepath)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/1_experiment/0_zero_shot/2-eval-Qwen25-VL-3B-Instruct.csv'
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  3.12it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  4.53it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  4.24it/s]
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Device set to use cuda
+/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/torch/nn/modules/module.py:1341: UserWarning: expandable_segments not supported on this platform (Triggered internally at /pytorch/c10/hip/HIPAllocatorConfig.h:29.)
+  return t.to(
+You seem to be using the pipelines sequentially on GPU. In order to maximize efficiency please use a dataset
+Traceback (most recent call last):
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/parse_model_classification.py", line 133, in <module>
+    main(args)
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/parse_model_classification.py", line 103, in main
+    classifications = get_list_of_model_classification_new(classification_filepath=input_model_classification_filepath)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/parse_model_classification.py", line 19, in get_list_of_model_classification_new
+    with open(classification_filepath, 'r') as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/1_experiment/1_one_shot_in_context_learning/1-Qwen2.5-VL-3B-Instruct.txt'
+Traceback (most recent call last):
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/evaluate_model_classification.py", line 101, in <module>
+    main(args)
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/evaluate_model_classification.py", line 71, in main
+    df = get_csv_as_dataframe(input_evaluation_csv_filepath)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/evaluate_model_classification.py", line 6, in get_csv_as_dataframe
+    return pd.read_csv(csv_filepath)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/1_experiment/1_one_shot_in_context_learning/2-eval-Qwen25-VL-3B-Instruct.csv'

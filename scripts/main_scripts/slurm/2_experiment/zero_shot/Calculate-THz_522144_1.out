@@ -1,0 +1,3 @@
+importing libraries (torch, transformers, os, argparse, time)
+Sending the next Image now. Analyse it and answer with reasoning. Here is the Image Nr. [Image NR]
+creating pipeline

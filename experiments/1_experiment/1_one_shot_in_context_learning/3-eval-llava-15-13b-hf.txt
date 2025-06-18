@@ -1,0 +1,7 @@
+--EVALUATION--------------------
+Model:       llava-hf/llava-1.5-13b-hf
+Accuracy:    0.1686
+Precision:   0.1686
+Recall:      1.0000
+F1-Score:    0.2885
+--------------------------------

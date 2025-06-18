@@ -1,0 +1,118 @@
+Traceback (most recent call last):
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 669, in resolve_trust_remote_code
+    answer = input(
+             ^^^^^^
+EOFError: EOF when reading a line
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/nico_get_thz_result.py", line 560, in <module>
+    main(args)
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/nico_get_thz_result.py", line 347, in main
+    pipe = pipeline("image-text-to-text", model=model_path, device="cuda", torch_dtype=torch.bfloat16)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/transformers/pipelines/__init__.py", line 851, in pipeline
+    config = AutoConfig.from_pretrained(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/transformers/models/auto/configuration_auto.py", line 1117, in from_pretrained
+    trust_remote_code = resolve_trust_remote_code(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 682, in resolve_trust_remote_code
+    raise ValueError(
+ValueError: The repository for microsoft/Phi-4-multimodal-instruct contains custom code which must be executed to correctly load the model. You can inspect the repository content at https://hf.co/microsoft/Phi-4-multimodal-instruct.
+Please pass the argument `trust_remote_code=True` to allow custom code to be run.
+Traceback (most recent call last):
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/parse_model_classification.py", line 133, in <module>
+    main(args)
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/parse_model_classification.py", line 103, in main
+    classifications = get_list_of_model_classification_new(classification_filepath=input_model_classification_filepath)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/parse_model_classification.py", line 19, in get_list_of_model_classification_new
+    with open(classification_filepath, 'r') as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/1_experiment/0_zero_shot/1-Phi-4-multimodal-instruct.txt'
+Traceback (most recent call last):
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/evaluate_model_classification.py", line 101, in <module>
+    main(args)
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/evaluate_model_classification.py", line 71, in main
+    df = get_csv_as_dataframe(input_evaluation_csv_filepath)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/evaluate_model_classification.py", line 6, in get_csv_as_dataframe
+    return pd.read_csv(csv_filepath)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/1_experiment/0_zero_shot/2-eval-Phi-4-multimodal-instruct.csv'
+Traceback (most recent call last):
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 669, in resolve_trust_remote_code
+    answer = input(
+             ^^^^^^
+EOFError: EOF when reading a line
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/nico_get_thz_result.py", line 560, in <module>
+    main(args)
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/nico_get_thz_result.py", line 347, in main
+    pipe = pipeline("image-text-to-text", model=model_path, device="cuda", torch_dtype=torch.bfloat16)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/transformers/pipelines/__init__.py", line 851, in pipeline
+    config = AutoConfig.from_pretrained(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/transformers/models/auto/configuration_auto.py", line 1117, in from_pretrained
+    trust_remote_code = resolve_trust_remote_code(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 682, in resolve_trust_remote_code
+    raise ValueError(
+ValueError: The repository for microsoft/Phi-4-multimodal-instruct contains custom code which must be executed to correctly load the model. You can inspect the repository content at https://hf.co/microsoft/Phi-4-multimodal-instruct.
+Please pass the argument `trust_remote_code=True` to allow custom code to be run.
+Traceback (most recent call last):
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/parse_model_classification.py", line 133, in <module>
+    main(args)
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/parse_model_classification.py", line 103, in main
+    classifications = get_list_of_model_classification_new(classification_filepath=input_model_classification_filepath)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/parse_model_classification.py", line 19, in get_list_of_model_classification_new
+    with open(classification_filepath, 'r') as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/1_experiment/1_one_shot_in_context_learning/1-Phi-4-multimodal-instruct.txt'
+Traceback (most recent call last):
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/evaluate_model_classification.py", line 101, in <module>
+    main(args)
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/evaluate_model_classification.py", line 71, in main
+    df = get_csv_as_dataframe(input_evaluation_csv_filepath)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/evaluate_model_classification.py", line 6, in get_csv_as_dataframe
+    return pd.read_csv(csv_filepath)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/1_experiment/1_one_shot_in_context_learning/2-eval-Phi-4-multimodal-instruct.csv'

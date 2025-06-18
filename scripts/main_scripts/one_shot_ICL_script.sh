@@ -28,10 +28,10 @@ DESCRIPTION="Experiment 1 - For Models Qwen and Mistral (One-Shot-ICL)"
 if [[ $SLURM_ARRAY_TASK_ID -eq 0 ]]
 then
     #python nico_get_thz_result.py --model qwen --should_add_context True --test_description "Experiment 1 - For Models Qwen and Mistral" --output_folder_filepath /pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/1_first_experiment/1_one_shot_in_context_learning
-    python nico_get_thz_result.py --model qwen --should_add_context True --test_description "$DESCRIPTION" --output_folder_filepath /pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/2_experiment/1_one_shot_in_context_learning
+    python nico_get_thz_result.py --model qwen --should_add_context True --test_description "$DESCRIPTION" --output_folder_filepath /pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/1_experiment/1_one_shot_in_context_learning
 else
     #python nico_get_thz_result.py --model mistral --should_add_context True --test_description "Experiment 1 - For Models Qwen and Mistral" --output_folder_filepath /pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/1_first_experiment/1_one_shot_in_context_learning 
-    python nico_get_thz_result.py --model mistral --should_add_context True --test_description "$DESCRIPTION" --output_folder_filepath /pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/2_experiment/1_one_shot_in_context_learning
+    python nico_get_thz_result.py --model mistral --should_add_context True --test_description "$DESCRIPTION" --output_folder_filepath /pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/1_experiment/1_one_shot_in_context_learning
 fi
 
 echo "Ended job on $(date)"

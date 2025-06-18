@@ -12,12 +12,23 @@ def get_model_path(model_name):
 
     elif model_name.lower() == "qwen":
         model_path = "Qwen/Qwen2.5-VL-7B-Instruct"
+
+    elif model_name.lower() == "llava1.5":
+        model_path = "liuhaotian/llava-v1.5-13b"
     
+    elif model_name.lower() == "phi4":
+        model_path = "Phi-4-multimodal-instruct"
+
+    elif model_name.lower() == "deepseekvl2":
+        model_path = "deepseek-ai/deepseek-vl2"
+
     elif model_name.lower() == "llama4":
         model_path = "meta-llama/Llama-4-Scout-17B-16E-Instruct"
     
     elif model_name.lower() == "molmo":
         model_path = "allenai/Molmo-7B-D-0924"
+    else:
+        model_path = model_name
 
     return model_path
 
@@ -247,9 +258,16 @@ def main(args):
     #  
     # mistral
     # qwen
+    # llava1.5
+    # phi4
+    # deepseekvl2
     # llama4
+
     # mistralai/Mistral-Small-3.1-24B-Instruct-2503
     # Qwen/Qwen2.5-VL-7B-Instruct           
+    # liuhaotian/llava-v1.5-13b
+    # Phi-4-multimodal-instruct
+    # deepseek-ai/deepseek-vl2
     # meta-llama/Llama-4-Scout-17B-16E-Instruct
     #---------------------------------------------------------------------------------------------------
 
@@ -298,7 +316,8 @@ def main(args):
 
     if args.model != None: 
         model_name = args.model
-        output_addon = args.model
+        output_addon = args.model.split("/")[-1]
+        output_addon = output_addon.replace(".","")
     if args.should_add_context != None: 
         should_add_context = args.should_add_context
     if args.test_description != None: 
@@ -524,7 +543,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Give fairness score for generated images")
     
     parser.add_argument("--model", type=str, required=False, 
-                        choices=["mistral", "qwen",  "llama4", "molmo"], 
                         help="VLM to use")
 
     parser.add_argument("--should_add_context", type=str2bool, required=False, 
@@ -537,8 +555,6 @@ if __name__ == "__main__":
                         help="Output_Folder_Filepath")
     
 
-
     args = parser.parse_args()
-
 
     main(args)

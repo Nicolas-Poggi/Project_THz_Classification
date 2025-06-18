@@ -1,0 +1,18 @@
+importing libraries (torch, transformers, os, argparse, time)
+Sending the next Image now. Analyse it and answer with reasoning. Here is the Image Nr. [Image NR]
+creating pipeline
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc3n083
+Job ID: 524890
+Cluster: uc3
+User/Group: ma_npoggigo/ma_ma
+State: CANCELLED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:02
+CPU Efficiency: 0.04% of 01:25:04 core-walltime
+Job Wall-clock time: 00:05:19
+Memory Utilized: 21.62 GB
+Memory Efficiency: 21.62% of 100.00 GB (100.00 GB/node)

@@ -1,0 +1,54 @@
+Loading checkpoint shards:   0%|          | 0/6 [00:00<?, ?it/s]Loading checkpoint shards:  17%|█▋        | 1/6 [00:07<00:36,  7.28s/it]Loading checkpoint shards:  33%|███▎      | 2/6 [00:13<00:26,  6.55s/it]Loading checkpoint shards:  50%|█████     | 3/6 [00:19<00:19,  6.48s/it]Loading checkpoint shards:  67%|██████▋   | 4/6 [00:25<00:12,  6.35s/it]Loading checkpoint shards:  83%|████████▎ | 5/6 [00:31<00:06,  6.18s/it]Loading checkpoint shards: 100%|██████████| 6/6 [00:34<00:00,  4.90s/it]Loading checkpoint shards: 100%|██████████| 6/6 [00:34<00:00,  5.69s/it]
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Device set to use cuda
+/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/torch/nn/modules/module.py:1341: UserWarning: expandable_segments not supported on this platform (Triggered internally at /pytorch/c10/hip/HIPAllocatorConfig.h:29.)
+  return t.to(
+You seem to be using the pipelines sequentially on GPU. In order to maximize efficiency please use a dataset
+Traceback (most recent call last):
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/evaluate_model_classification.py", line 101, in <module>
+    main(args)
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/evaluate_model_classification.py", line 72, in main
+    accuracy, precision, recall, f1 = evaluate_predictions(df)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/scripts/main_scripts/../evaluation_processing/evaluate_model_classification.py", line 43, in evaluate_predictions
+    accuracy = accuracy_score(y_true, y_pred)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/sklearn/utils/_param_validation.py", line 218, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/sklearn/metrics/_classification.py", line 359, in accuracy_score
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/sklearn/metrics/_classification.py", line 99, in _check_targets
+    type_pred = type_of_target(y_pred, input_name="y_pred")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/sklearn/utils/multiclass.py", line 416, in type_of_target
+    classes = cached_unique(y)
+              ^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/sklearn/utils/_unique.py", line 105, in cached_unique
+    res = tuple(_cached_unique(y, xp=xp) for y in ys)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/sklearn/utils/_unique.py", line 105, in <genexpr>
+    res = tuple(_cached_unique(y, xp=xp) for y in ys)
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/sklearn/utils/_unique.py", line 78, in _cached_unique
+    return xp.unique_values(y)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/sklearn/externals/array_api_compat/_internal.py", line 28, in wrapped_f
+    return f(*args, xp=xp, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/sklearn/externals/array_api_compat/common/_aliases.py", line 228, in unique_values
+    return xp.unique(
+           ^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/numpy/lib/_arraysetops_impl.py", line 291, in unique
+    ret = _unique1d(ar, return_index, return_inverse, return_counts, 
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/numpy/lib/_arraysetops_impl.py", line 358, in _unique1d
+    ar.sort()
+TypeError: '<' not supported between instances of 'str' and 'float'
+Loading checkpoint shards:   0%|          | 0/6 [00:00<?, ?it/s]Loading checkpoint shards:  17%|█▋        | 1/6 [00:07<00:37,  7.48s/it]Loading checkpoint shards:  33%|███▎      | 2/6 [00:14<00:27,  6.95s/it]Loading checkpoint shards:  50%|█████     | 3/6 [00:20<00:19,  6.58s/it]Loading checkpoint shards:  67%|██████▋   | 4/6 [00:26<00:12,  6.35s/it]Loading checkpoint shards:  83%|████████▎ | 5/6 [00:32<00:06,  6.22s/it]Loading checkpoint shards: 100%|██████████| 6/6 [00:34<00:00,  4.93s/it]Loading checkpoint shards: 100%|██████████| 6/6 [00:34<00:00,  5.77s/it]
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Device set to use cuda
+/pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/miniconda3/envs/amd/lib/python3.12/site-packages/torch/nn/modules/module.py:1341: UserWarning: expandable_segments not supported on this platform (Triggered internally at /pytorch/c10/hip/HIPAllocatorConfig.h:29.)
+  return t.to(
+You seem to be using the pipelines sequentially on GPU. In order to maximize efficiency please use a dataset

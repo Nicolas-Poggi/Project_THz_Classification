@@ -25,13 +25,18 @@ export PYTORCH_HIP_ALLOC_CONF=expandable_segments:True
 
 DESCRIPTION="Experiment 1 - For Models Qwen and Mistral"
 
-if [[ $SLURM_ARRAY_TASK_ID -eq 0 ]]
-then
+if [[ $SLURM_ARRAY_TASK_ID -eq 0 ]]; then
     #python nico_get_thz_result.py --model qwen --should_add_context False --test_description "Experiment 1 - For Models Qwen and Mistral"
-    python nico_get_thz_result.py --model qwen --should_add_context False --test_description "$DESCRIPTION" --output_folder_filepath /pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/2_experiment/0_zero_shot
-else
+    python nico_get_thz_result.py --model llava4 --should_add_context False --test_description "$DESCRIPTION" --output_folder_filepath /pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/1_experiment/0_zero_shot
+elif [[ $SLURM_ARRAY_TASK_ID -eq 1 ]]; then
     #python nico_get_thz_result.py --model mistral --should_add_context False --test_description "Experiment 1 - For Models Qwen and Mistral"
-    #python nico_get_thz_result.py --model mistral --should_add_context False --test_description "$DESCRIPTION" --output_folder_filepath /pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/2_experiment/0_zero_shot
+    python nico_get_thz_result.py --model mistral --should_add_context False --test_description "$DESCRIPTION" --output_folder_filepath /pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/1_experiment/0_zero_shot
+
+elif [[ $SLURM_ARRAY_TASK_ID -eq 2 ]]; then
+    python nico_get_thz_result.py --model mistral --should_add_context False --test_description "$DESCRIPTION" --output_folder_filepath /pfs/work9/workspace/scratch/ma_npoggigo-bachelor_thesis_fss2025/Project_THz_Classification/experiments/1_experiment/0_zero_shot
+
+else
+    echo "Invalid SLURM_ARRAY_TASK_ID: $SLURM_ARRAY_TASK_ID"
 fi
 
 echo "Ended job on $(date)"
