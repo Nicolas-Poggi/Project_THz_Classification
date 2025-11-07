@@ -9,7 +9,6 @@ Please cite the work if you use the code or work:
 @inproceedings{poggi2025smart,
   title={Smart Eyes for Silent Threats: VLMs and In-Context Learning for THz Imaging},
   author={Poggi, Nicolas and Agnihotri, Shashank and Keuper, Margret},
-  journal={arXiv preprint arXiv:2507.15576},
   year={2025},
 booktitle={IEEE/CVF International Conference on Computer Vision 2025 Workshop CV4DC}
 }
