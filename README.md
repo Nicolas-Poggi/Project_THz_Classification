@@ -1,5 +1,25 @@
 # Classification and Reasoning on THz data using VLMs
 
+## Paper: [Smart Eyes for Silent Threats: VLMs and In-Context Learning for THz Imaging](https://arxiv.org/pdf/2507.15576?)
+## Accepted at the CV4DC 2025 Workshop at IEEE/CVF International Conference on Computer Vision 2025
+
+Please cite the work if you use the code or work:
+> BibTeX
+```
+@inproceedings{poggi2025smart,
+  title={Smart Eyes for Silent Threats: VLMs and In-Context Learning for THz Imaging},
+  author={Poggi, Nicolas and Agnihotri, Shashank and Keuper, Margret},
+  journal={arXiv preprint arXiv:2507.15576},
+  year={2025},
+booktitle={IEEE/CVF International Conference on Computer Vision 2025 Workshop CV4DC}
+}
+```
+
+> Normal Text
+```
+Poggi, Nicolas, Shashank Agnihotri, and Margret Keuper. "Smart Eyes for Silent Threats: VLMs and In-Context Learning for THz Imaging." IEEE/CVF International Conference on Computer Vision 2025 Workshop CV4DC.
+```
+
 ## Project Overview / Description of Folders
 * [experiments](https://github.com/Nicolas-Poggi/Project_THz_Classification/tree/main/experiments) - Shows all Experiment Results regarding the classification of THz Images. The main experiment results that should be looked at (for both Zero-Shot and In-Context Learning) can be found in the [[1_experiment](https://github.com/Nicolas-Poggi/Project_THz_Classification/tree/main/experiments/1_experiment)] folder. The other folders are "past experiments" that were conducted for testing reasons (not important). A experiment result has 3 main parts:
   * **1-[model_name].txt** - It contains the experiment settings and classification output of the VLM model [model_name] for the 1400 THz Images of one THz Dataset.
